@@ -17,6 +17,7 @@ namespace test
 
 	void Hello::_init()
 	{
+		godot::Godot::print("Hello World!");
 	}
 
 	void Hello::_process(float delta)
