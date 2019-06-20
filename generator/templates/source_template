@@ -1,0 +1,25 @@
+#include "$include$.h"
+
+namespace $namespace$
+{
+	void $class$::_register_methods()
+	{
+		register_method("_process", &$class$::_process);
+	}
+
+	$class$::$class$()
+	{
+	}
+
+	$class$::~$class$()
+	{
+	}
+
+	void $class$::_init()
+	{
+	}
+
+	void $class$::_process(float delta)
+	{
+	}
+}
