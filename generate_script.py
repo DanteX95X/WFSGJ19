@@ -1,13 +1,22 @@
-source_folder="source/"
-native_script_path="demo/native_scripts/"
-dlibrary_path="res://bin/gdexample.gdnlib"
-class_register="register.cpp"
+###############################################################################################################
+###	Configurable parameters                                                 ###############################
+###############################################################################################################
 
-qtcreator_files_list="GodotProject.files"
-header_template="generator_templates/header_template"
-source_template="generator_templates/source_template"
-class_register_template="generator_templates/class_register"
-native_script_template="generator_templates/native_script"
+source_folder="source/"                                       ### root folder of your source
+native_script_path="demo/native_scripts/"                     ### path to native script objects
+dlibrary_path="res://bin/gdexample.gdnlib"                    ### path to library config file
+class_register="register.cpp"                                 ### name of your class register file
+default_namespace="godot"                                     ### default namespace
+
+qtcreator_files_list="GodotProject.files"                     ### path to your qtcreator project list of files
+header_template="generator_templates/header_template"         ### path to header template
+source_template="generator_templates/source_template"         ### path to source template
+class_register_template="generator_templates/class_register"  ### path to class register template
+native_script_template="generator_templates/native_script"    ### path to native script object template
+
+###############################################################################################################
+###############################################################################################################
+###############################################################################################################
 
 from argparse import ArgumentParser
 import re
@@ -21,19 +30,19 @@ def convert_to_underscore(name, upper):
 
 parser = ArgumentParser()
 parser.add_argument("-c", "-class", dest="classname", help="Provides a name for the generated class.")
-parser.add_argument("-d", "-directory", dest="directory", help="Provides directory in which generated files will be placed. Relative to source and native script directories.")
-parser.add_argument("-n", "-namespace", dest="namespace", help="Provides a namespace wrapping generated class.")
+parser.add_argument("-d", "-directory", dest="directory", default='', help="Provides directory in which generated files will be placed. Relative to source and native script directories.")
+parser.add_argument("-n", "-namespace", dest="namespace", default=default_namespace, help="Provides a namespace wrapping generated class.")
 
 args = parser.parse_args()
 
-if(args.namespace == None):
-    args.namespace="godot"
-if(args.directory == None):
-    args.directory="."
+if(args.classname == None)
+	print('Please provide a class name (-c argument).')
+	quit()
 
 filename=convert_to_underscore(args.classname, False)
 include_guard=convert_to_underscore(args.classname, True)
 
+# generating header file
 with open(header_template) as t:
     s=t.read()
     with open(source_folder + args.directory + "/" + filename +".h", "w") as h:
@@ -42,6 +51,7 @@ with open(header_template) as t:
         s=s.replace("$include_guard$", include_guard)
         h.write(s)
 
+# generating source file
 with open(source_template) as t:
     s=t.read()
     with open(source_folder + args.directory + "/" + filename + ".cpp", "w") as cpp:
@@ -50,6 +60,7 @@ with open(source_template) as t:
         s=s.replace("$include$", filename)
         cpp.write(s)
 
+# copying class register file
 r_exists = os.path.isfile(source_folder + class_register)
 if(not r_exists):
     with open(class_register_template) as t:
@@ -57,6 +68,7 @@ if(not r_exists):
         with open(source_folder + class_register, "w") as cr:
             cr.write(s)
 
+    # adding register to QtCreator project if it exists
     qt_exists = os.path.isfile(qtcreator_files_list)
     if(qt_exists):
         line=source_folder + class_register
@@ -67,6 +79,7 @@ if(not r_exists):
                 qt.write(line + "\n")
                 print("added register to project")
 
+# adding source and header files to QtCreator project if it exists
 qt_exists = os.path.isfile(qtcreator_files_list)
 if(qt_exists):
     with open(qtcreator_files_list) as qt:
@@ -81,6 +94,7 @@ if(qt_exists):
                 qt.write(line + "\n")
     
 
+# adding entries to class register
 with open(source_folder + class_register) as cr:
     s = cr.read()
     include_line = '#include "' + args.directory + "/" + filename + '.h"'
@@ -98,6 +112,7 @@ with open(source_folder + class_register) as cr:
 with open(source_folder + class_register, "w") as cr:
     cr.write(s)
 
+# generating native script object representing generated class
 with open(native_script_template) as t:
     s=t.read()
     with open(native_script_path + args.directory + "/" + args.classname + ".gdns", "w") as ns:
