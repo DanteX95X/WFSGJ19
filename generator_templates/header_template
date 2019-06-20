@@ -1,0 +1,24 @@
+#ifndef $include_guard$_H
+#define $include_guard$_H
+
+#include <Godot.hpp>
+#include <Node2D.hpp>
+
+namespace $namespace$
+{
+	class $class$ : public godot::Node2D
+	{
+		GODOT_CLASS($class$, godot::Node2D)
+
+	public:
+		static void _register_methods();
+
+		$class$();
+		~$class$();
+
+		void _init();
+		void _process(float delta);
+	};
+}
+
+#endif // $include_guard$_H
