@@ -18,6 +18,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle)
 
 	godot::register_class<test::Hello>();
 	godot::register_class<test::MoveAround>();
-	godot::register_class<godot::Dupa>();
 	//$register$ DO NOT DELETE THIS COMMENT
 }
