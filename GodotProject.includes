@@ -1,0 +1,12 @@
+godot-cpp/godot_headers
+godot-cpp/godot_headers/android
+godot-cpp/godot_headers/arvr
+godot-cpp/godot_headers/gdnative
+godot-cpp/godot_headers/nativescript
+godot-cpp/godot_headers/net
+godot-cpp/godot_headers/pluginscript
+godot-cpp/godot_headers/videodecoder
+source
+godot-cpp/include/core
+godot-cpp/include/gen
+

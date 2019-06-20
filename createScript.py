@@ -1,14 +1,13 @@
-source_folder="src/"
+source_folder="source/"
 native_script_path="demo/native_scripts/"
 dlibrary_path="res://bin/gdexample.gdnlib"
 class_register="register.cpp"
 
-qtcreator_files_list="ExampleProject.files"
+qtcreator_files_list="GodotProject.files"
 header_template="generator/templates/header_template"
 source_template="generator/templates/source_template"
 class_register_template="generator/templates/class_register"
 native_script_template="generator/templates/native_script"
-registered_classes="generator/data/registered_classes"
 
 from argparse import ArgumentParser
 import re
@@ -50,11 +49,6 @@ with open(source_template) as t:
         s=s.replace("$namespace$", args.namespace)
         s=s.replace("$include$", filename)
         cpp.write(s)
-
-with open(registered_classes, "a+") as r:
-    r.write(args.namespace + "::" + args.classname + "\n")
-    r.write(args.directory + "/" + filename + "\n")
-
 
 r_exists = os.path.isfile(source_folder + class_register)
 if(not r_exists):

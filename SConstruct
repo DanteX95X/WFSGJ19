@@ -2,7 +2,7 @@
 import os, subprocess
 
 #this can be changed to compile different sources
-base_source_directory='src/'
+base_source_directory='source/'
 
 opts = Variables([], ARGUMENTS)
 
