@@ -30,7 +30,7 @@ def convert_to_underscore(name, upper):
 
 parser = ArgumentParser()
 parser.add_argument("-c", "-class", dest="classname", help="Provides a name for the generated class.")
-parser.add_argument("-d", "-directory", dest="directory", default='', help="Provides directory in which generated files will be placed. Relative to source and native script directories.")
+parser.add_argument("-d", "-directory", dest="directory", default='.', help="Provides directory in which generated files will be placed. Relative to source and native script directories.")
 parser.add_argument("-n", "-namespace", dest="namespace", default=default_namespace, help="Provides a namespace wrapping generated class.")
 
 args = parser.parse_args()
