@@ -1315,3 +1315,5 @@ godot-cpp/src/gen/__register_types.cpp
 source/register.cpp
 source/./hello.h
 source/./hello.cpp
+source/test/move_around.h
+source/test/move_around.cpp
