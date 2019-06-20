@@ -4,10 +4,10 @@ dlibrary_path="res://bin/gdexample.gdnlib"
 class_register="register.cpp"
 
 qtcreator_files_list="GodotProject.files"
-header_template="generator/templates/header_template"
-source_template="generator/templates/source_template"
-class_register_template="generator/templates/class_register"
-native_script_template="generator/templates/native_script"
+header_template="generator_templates/header_template"
+source_template="generator_templates/source_template"
+class_register_template="generator_templates/class_register"
+native_script_template="generator_templates/native_script"
 
 from argparse import ArgumentParser
 import re
