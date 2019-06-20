@@ -1,6 +1,6 @@
 source_folder="source/"
 native_script_path="demo/native_scripts/"
-dlibrary_path="res://bin/gdexample.gdnlib"
+dlibrary_path="res://gdexample.gdnlib"
 class_register="register.cpp"
 
 qtcreator_files_list="GodotProject.files"
