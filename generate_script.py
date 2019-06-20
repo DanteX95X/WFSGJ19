@@ -35,7 +35,7 @@ parser.add_argument("-n", "-namespace", dest="namespace", default=default_namesp
 
 args = parser.parse_args()
 
-if(args.classname == None)
+if(args.classname == None):
 	print('Please provide a class name (-c argument).')
 	quit()
 
