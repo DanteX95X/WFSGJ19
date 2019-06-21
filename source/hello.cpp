@@ -4,7 +4,7 @@ namespace test
 {
 	void Hello::_register_methods()
 	{
-		register_method("_process", &Hello::_process);
+		godot::register_method("_process", &Hello::_process);
 	}
 
 	Hello::Hello()
