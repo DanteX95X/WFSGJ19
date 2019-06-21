@@ -13,6 +13,7 @@ namespace test
 	private:
 		float timePassed;
 		float amplitude;
+		float speed;
 
 	public:
 		static void _register_methods();
@@ -22,6 +23,9 @@ namespace test
 
 		void _init();
 		void _process(float delta);
+
+		float getSpeed() const;
+		void setSpeed(float speed);
 	};
 }
 

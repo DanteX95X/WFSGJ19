@@ -12,4 +12,4 @@ script = ExtResource( 1 )
 position = Vector2( -3.7428, 0.0804749 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
-amplitude = 20.0
+speed = 5.0
