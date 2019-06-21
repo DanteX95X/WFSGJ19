@@ -26,6 +26,8 @@ namespace test
 
 		float getSpeed() const;
 		void setSpeed(float speed);
+
+		void SignalledMethod(godot::Node* node, godot::Vector2 position);
 	};
 }
 
