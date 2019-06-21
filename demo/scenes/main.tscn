@@ -9,6 +9,7 @@ position = Vector2( 490, 319 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 5.30365, 0.0805359 )
+position = Vector2( -3.7428, 0.0804749 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
+amplitude = 20.0

@@ -12,6 +12,7 @@ namespace test
 
 	private:
 		float timePassed;
+		float amplitude;
 
 	public:
 		static void _register_methods();
