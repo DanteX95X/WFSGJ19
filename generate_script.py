@@ -3,8 +3,8 @@
 ###############################################################################################################
 
 source_folder="source/"                                       ### root folder of your source
-native_script_path="demo/native_scripts/"                     ### path to native script objects
-dlibrary_path="res://bin/gdexample.gdnlib"                    ### path to library config file
+native_script_path="project/scripts/"                     ### path to native script objects
+dlibrary_path="res://bin/wfsgj19.gdnlib"                    ### path to library config file
 class_register="register.cpp"                                 ### name of your class register file
 default_namespace="godot"                                     ### default namespace
 

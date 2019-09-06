@@ -15,3 +15,7 @@ export_presets.cfg
 .mono/
 
 # End of https://www.gitignore.io/api/godot
+
+project/bin/x11/
+project/bin/windows/
+project/bin/osx/

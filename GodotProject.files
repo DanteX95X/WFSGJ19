@@ -1313,7 +1313,5 @@ godot-cpp/src/gen/YSort.cpp
 godot-cpp/src/gen/__init_method_bindings.cpp
 godot-cpp/src/gen/__register_types.cpp
 source/register.cpp
-source/./hello.h
-source/./hello.cpp
-source/test/move_around.h
-source/test/move_around.cpp
+source/./test.h
+source/./test.cpp
