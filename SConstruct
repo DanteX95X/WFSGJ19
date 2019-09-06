@@ -108,7 +108,7 @@ if env['platform'] == 'linux':
     env['target_path'] += 'x11/'
     cpp_library += '.linux'
 
-    env.Append(CCFLAGS=['-fPIC', '-g', '-std=c++14', '-Wwrite-strings'])
+    env.Append(CCFLAGS=['-fPIC', '-g', '-std=c++17', '-Wwrite-strings'])
     env.Append(LINKFLAGS=["-Wl,-R,'$$ORIGIN'"])
 
     if env['target'] == 'debug':
@@ -134,7 +134,7 @@ elif env['platform'] == 'osx':
             'Only 64-bit builds are supported for the macOS target.'
         )
 
-    env.Append(CCFLAGS=['-g', '-std=c++14', '-arch', 'x86_64'])
+    env.Append(CCFLAGS=['-g', '-std=c++17', '-arch', 'x86_64'])
     env.Append(LINKFLAGS=[
         '-arch',
         'x86_64',
@@ -174,7 +174,7 @@ elif env['platform'] == 'windows':
 
     # Native or cross-compilation using MinGW
     if host_platform == 'linux' or host_platform == 'osx' or env['use_mingw']:
-        env.Append(CCFLAGS=['-g', '-O3', '-std=c++14', '-Wwrite-strings'])
+        env.Append(CCFLAGS=['-g', '-O3', '-std=c++17', '-Wwrite-strings'])
         env.Append(LINKFLAGS=[
             '--static',
             '-Wl,--no-undefined',
