@@ -1,8 +1,12 @@
 #!python
 import os, subprocess
 
+####
 #this can be changed to compile different sources
 base_source_directory='source/'
+base_bin_directory='demo/bin/'
+library_name='libgdexample'
+####
 
 opts = Variables([], ARGUMENTS)
 
@@ -14,8 +18,8 @@ opts.Add(EnumVariable('target', "Compilation target", 'debug', ['d', 'debug', 'r
 opts.Add(EnumVariable('platform', "Compilation platform", '', ['', 'windows', 'x11', 'linux', 'osx']))
 opts.Add(EnumVariable('p', "Compilation target, alias for 'platform'", '', ['', 'windows', 'x11', 'linux', 'osx']))
 opts.Add(BoolVariable('use_llvm', "Use the LLVM / Clang compiler", 'no'))
-opts.Add(PathVariable('target_path', 'The path where the lib is installed.', 'demo/bin/'))
-opts.Add(PathVariable('target_name', 'The library name.', 'libgdexample', PathVariable.PathAccept))
+opts.Add(PathVariable('target_path', 'The path where the lib is installed.', base_bin_directory))
+opts.Add(PathVariable('target_name', 'The library name.', library_name, PathVariable.PathAccept))
 
 # Local dependency paths, adapt them to your setup
 godot_headers_path = "godot-cpp/godot_headers/"
