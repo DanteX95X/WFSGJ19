@@ -11,9 +11,7 @@ namespace test
 		godot::Dictionary args;
 		args[godot::Variant("node")] = godot::Variant(godot::Variant::OBJECT);
 		args[godot::Variant("position")] = godot::Variant(godot::Variant::VECTOR2);
-		godot::register_signal<MoveAround>((char*)"done", args);
-
-		godot::register_method("SignalledMethod", &MoveAround::SignalledMethod);
+		godot::register_signal<MoveAround>("done", args);
 	}
 
 	MoveAround::MoveAround()
@@ -29,7 +27,6 @@ namespace test
 		timePassed = 0;
 		amplitude = 10;
 		speed = 1;
-		connect("done", this, "SignalledMethod");
 	}
 
 	void MoveAround::_process(float delta)
@@ -47,10 +44,4 @@ namespace test
 
 	float MoveAround::getSpeed() const { return speed; }
 	void MoveAround::setSpeed(float speed) { this->speed = speed; }
-
-	void MoveAround::SignalledMethod(godot::Node* node, godot::Vector2 position)
-	{
-		godot::Godot::print("signal");
-		queue_free();
-	}
 }

@@ -16,8 +16,14 @@ namespace test
 		Hello();
 		~Hello();
 
+		void Signal(godot::Node* node, godot::Vector2 position);
+
 		void _init();
+		void _ready();
 		void _process(float delta);
+
+	private:
+		bool done;
 	};
 }
 
