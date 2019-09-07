@@ -104,7 +104,28 @@ shape = SubResource( 10 )
 position = Vector2( 1248.67, 1025.32 )
 
 [node name="Crier" parent="." instance=ExtResource( 4 )]
-position = Vector2( 122.76, 109.919 )
+position = Vector2( 120, 110 )
 
 [node name="Crier2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 907.222, 114.702 )
+position = Vector2( 220, 110 )
+
+[node name="Crier3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 320, 110 )
+
+[node name="Crier4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 420, 110 )
+
+[node name="Crier5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 520, 110 )
+
+[node name="Crier6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 620, 110 )
+
+[node name="Crier7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 720, 110 )
+
+[node name="Crier8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 820, 110 )
+
+[node name="Crier9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 920, 110 )

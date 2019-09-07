@@ -5,13 +5,13 @@
 [ext_resource path="res://icon.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 40.0
+radius = 20.0
 
 [node name="Ball" type="RigidBody2D"]
 mass = 0.01
 physics_material_override = ExtResource( 1 )
 gravity_scale = 0.0
-linear_velocity = Vector2( 400, 400 )
+linear_velocity = Vector2( 200, 400 )
 linear_damp = 0.0
 script = ExtResource( 2 )
 
@@ -19,4 +19,5 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="CollisionShape2D"]
+scale = Vector2( 0.552803, 0.486437 )
 texture = ExtResource( 3 )
