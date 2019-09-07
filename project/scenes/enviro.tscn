@@ -104,7 +104,7 @@ shape = SubResource( 10 )
 position = Vector2( 1248.67, 1025.32 )
 
 [node name="Crier" parent="." instance=ExtResource( 4 )]
-position = Vector2( 139.502, 291.685 )
+position = Vector2( 122.76, 109.919 )
 
 [node name="Crier2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 923.964, 301.251 )
+position = Vector2( 907.222, 114.702 )

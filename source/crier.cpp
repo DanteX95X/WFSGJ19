@@ -42,13 +42,14 @@ namespace godot
 
 	void Crier::_process(float delta)
 	{
-		//SpawnBall();
+		SpawnBall();
 
 		move_and_slide(velocity);
 
 		timeCounter += delta;
 		if(timeCounter > xTimer)
 		{
+			translate(Vector2{0, 100});
 			velocity.x = -velocity.x;
 			timeCounter = 0;
 			Godot::print("ufo " + get_name());
