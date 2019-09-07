@@ -31,6 +31,7 @@ namespace godot
 		ball = nullptr;
 
 		velocity = Vector2{100, 0};
+		timeCounter = 0;
 	}
 
 	void Crier::_ready()

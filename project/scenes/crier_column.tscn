@@ -3,4 +3,6 @@
 [ext_resource path="res://scripts/CrierColumn.gdns" type="Script" id=1]
 
 [node name="Column" type="Node2D"]
+position = Vector2( 217.433, 169.459 )
 script = ExtResource( 1 )
+Count = 3
