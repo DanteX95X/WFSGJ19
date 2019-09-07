@@ -1,4 +1,5 @@
 #include "ball.h"
+#include <random>
 
 namespace godot
 {
@@ -20,6 +21,16 @@ namespace godot
 
 	void Ball::_init()
 	{
+		Vector2 velocity = get_linear_velocity();
+
+		std::random_device random;
+		std::mt19937 twister{random()};
+		std::uniform_int_distribution<int> distribution{0, 1};
+		velocity.x = distribution(twister) == 0 ? -velocity.x : velocity.x;
+
+		Godot::print(velocity);
+
+		set_linear_velocity(velocity);
 	}
 
 	void Ball::_ready()

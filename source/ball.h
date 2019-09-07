@@ -23,6 +23,7 @@ namespace godot
 
 		void Destroy();
 
+	private:
 		//static const String ballDestroyedSignal;
 	};
 }
