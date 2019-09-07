@@ -1,4 +1,5 @@
 #include "game_manager.h"
+#include <SceneTree.hpp>
 
 namespace godot
 {
@@ -47,6 +48,7 @@ namespace godot
 		if(lifes <= 0)
 		{
 			Godot::print("Game Over");
+			get_tree()->change_scene("res://scenes/level.tscn");
 		}
 	}
 
