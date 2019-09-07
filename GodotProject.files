@@ -1315,3 +1315,5 @@ godot-cpp/src/gen/__register_types.cpp
 source/register.cpp
 source/./test.h
 source/./test.cpp
+source/./paddle.h
+source/./paddle.cpp

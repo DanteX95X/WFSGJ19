@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://physics/bouncy_material.tres" type="PhysicsMaterial" id=1]
 [ext_resource path="res://scenes/ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Paddle.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.99639, 1 )
@@ -91,3 +92,6 @@ shape = SubResource( 8 )
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 981.914, 476.409 )
+
+[node name="Paddle" parent="." instance=ExtResource( 3 )]
+position = Vector2( 978.362, 853.064 )

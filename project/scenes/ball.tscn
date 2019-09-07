@@ -10,11 +10,11 @@ radius = 40.0
 mass = 0.01
 physics_material_override = ExtResource( 1 )
 gravity_scale = 0.0
-linear_velocity = Vector2( 1000, 500 )
+linear_velocity = Vector2( 800, 400 )
 linear_damp = 0.0
-
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="CollisionShape2D"]
+texture = ExtResource( 2 )
