@@ -8,6 +8,7 @@ namespace godot
 	{
 		godot::register_method("_ready", &Crier::_ready);
 		godot::register_method("_process", &Crier::_process);
+		godot::register_method("OnBallDestroyed", &Crier::OnBallDestroyed);
 	}
 
 	Crier::Crier()
@@ -20,16 +21,33 @@ namespace godot
 
 	void Crier::_init()
 	{
+		Ref<Resource> resource = ResourceLoader::get_singleton()->load("res://scenes/ball.tscn");
+		ballScene = resource;
+		ball = nullptr;
 	}
 
 	void Crier::_ready()
 	{
-		Ref<Resource> resource = ResourceLoader::get_singleton()->load("res://scenes/ball.tscn");
-		Ref<PackedScene> scene = resource;
-		add_child(scene->instance());
 	}
 
 	void Crier::_process(float delta)
 	{
+		if(!ball)
+		{
+			SpawnBall();
+		}
+	}
+
+	void Crier::OnBallDestroyed()
+	{
+		ball = nullptr;
+	}
+
+	void Crier::SpawnBall()
+	{
+		ball = ballScene->instance();
+		add_child(ball);
+		ball->connect("ball_destroyed", this, "OnBallDestroyed");
+		add_collision_exception_with(ball);
 	}
 }

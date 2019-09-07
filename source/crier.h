@@ -4,6 +4,7 @@
 #include <Godot.hpp>
 #include <Node2D.hpp>
 #include <KinematicBody2D.hpp>
+#include <PackedScene.hpp>
 
 namespace godot
 {
@@ -20,6 +21,14 @@ namespace godot
 		void _init();
 		void _ready();
 		void _process(float delta);
+
+		void OnBallDestroyed();
+
+	private:
+		void SpawnBall();
+
+		Ref<PackedScene> ballScene;
+		Node* ball;
 	};
 }
 
