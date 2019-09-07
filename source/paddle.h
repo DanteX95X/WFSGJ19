@@ -9,7 +9,7 @@ namespace godot
 {
 	class Paddle : public godot::KinematicBody2D
 	{
-		GODOT_CLASS(Paddle, godot::Node2D)
+		GODOT_CLASS(Paddle, godot::KinematicBody2D)
 
 	public:
 		static void _register_methods();
@@ -22,7 +22,7 @@ namespace godot
 		void _process(float delta);
 
 	private:
-		const float speed = 500;
+		const float speed = 1000;
 	};
 }
 

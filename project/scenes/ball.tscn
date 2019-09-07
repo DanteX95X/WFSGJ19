@@ -11,7 +11,7 @@ radius = 40.0
 mass = 0.01
 physics_material_override = ExtResource( 1 )
 gravity_scale = 0.0
-linear_velocity = Vector2( 400, 600 )
+linear_velocity = Vector2( 400, 400 )
 linear_damp = 0.0
 script = ExtResource( 2 )
 

@@ -12,7 +12,7 @@ colors = PoolColorArray( 0.992157, 1, 0, 1, 0.992157, 1, 0, 1 )
 gradient = SubResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 33.7173, 33.6149 )
+extents = Vector2( 39.1338, 39.9319 )
 
 [node name="Crier" type="KinematicBody2D"]
 script = ExtResource( 1 )

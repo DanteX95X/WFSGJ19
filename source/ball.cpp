@@ -28,8 +28,6 @@ namespace godot
 		std::uniform_int_distribution<int> distribution{0, 1};
 		velocity.x = distribution(twister) == 0 ? -velocity.x : velocity.x;
 
-		Godot::print(velocity);
-
 		set_linear_velocity(velocity);
 	}
 
