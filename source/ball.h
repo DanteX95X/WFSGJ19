@@ -4,6 +4,7 @@
 #include <Godot.hpp>
 #include <Node2D.hpp>
 #include <RigidBody2D.hpp>
+#include <Sprite.hpp>
 
 namespace godot
 {
@@ -24,6 +25,9 @@ namespace godot
 		void Destroy();
 
 	private:
+		Sprite* sprite;
+		Vector2 previousPosition;
+		float timeCounter;
 		//static const String ballDestroyedSignal;
 	};
 }

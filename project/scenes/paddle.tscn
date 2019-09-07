@@ -1,18 +1,46 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Paddle.gdns" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 145.566, 32.8555 )
 
-[sub_resource type="Gradient" id=2]
-colors = PoolColorArray( 1, 0, 0, 1, 1, 0, 0, 1 )
+[sub_resource type="Gradient" id=8]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 146.786, 10 )
+
+[sub_resource type="Gradient" id=10]
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=11]
+gradient = SubResource( 10 )
+
+[sub_resource type="Gradient" id=12]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 12 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "Blink"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ SubResource( 9 ), SubResource( 11 ), SubResource( 13 ) ]
+}
 
 [node name="Paddle" type="KinematicBody2D"]
 collision_mask = 3
@@ -26,10 +54,16 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="CollisionShape2D"]
 position = Vector2( 0.0245476, 0.11417 )
 scale = Vector2( 0.142364, 66.2259 )
-texture = SubResource( 3 )
+texture = SubResource( 9 )
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2( 145.753, 10.2885 )
 shape = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Blink"
+anims/Blink = SubResource( 7 )

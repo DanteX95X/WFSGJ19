@@ -1,5 +1,6 @@
 #include "ball.h"
 #include <random>
+#include <iostream>
 
 namespace godot
 {
@@ -33,10 +34,22 @@ namespace godot
 
 	void Ball::_ready()
 	{
+		sprite = static_cast<Sprite*>(get_node("Sprite"));
+		previousPosition = get_position();
+		timeCounter = 0;
 	}
 
 	void Ball::_process(float delta)
 	{
+		timeCounter += delta;
+
+		if(timeCounter > 0.1f)
+		{
+			Vector2 displacement = get_position() - previousPosition;
+			sprite->set_rotation(displacement.angle());
+			previousPosition = get_position();
+			timeCounter = 0;
+		}
 	}
 
 	void Ball::Destroy()

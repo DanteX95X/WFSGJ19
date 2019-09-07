@@ -58,6 +58,7 @@ physics_material_override = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Pit"]
+visible = false
 rotation = -1.38778e-17
 texture = SubResource( 4 )
 
