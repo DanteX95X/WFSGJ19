@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://physics/bouncy_material.tres" type="PhysicsMaterial" id=1]
 [ext_resource path="res://scripts/Pit.gdns" type="Script" id=2]
@@ -36,6 +36,9 @@ extents = Vector2( 1000, 0.5 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000, 0.62 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 1000, 10 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -129,3 +132,15 @@ position = Vector2( 820, 110 )
 
 [node name="Crier9" parent="." instance=ExtResource( 4 )]
 position = Vector2( 920, 110 )
+
+[node name="Crier10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 119.466, 938.352 )
+
+[node name="InvisiableWall" type="StaticBody2D" parent="."]
+position = Vector2( 1100.35, 985.986 )
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisiableWall"]
+position = Vector2( -126.725, 12.3635 )
+shape = SubResource( 11 )
