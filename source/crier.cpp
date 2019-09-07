@@ -36,7 +36,8 @@ namespace godot
 		timeCounter = 0;
 
 		spawnTimeCounter = 0;
-		spawnTimer = distribution(twister);
+		spawnTimer = id;
+		++id;
 	}
 
 	void Crier::_ready()
@@ -112,4 +113,6 @@ namespace godot
 		add_collision_exception_with(ball);
 		canOwnBallDoHarm = false;
 	}
+
+	int Crier::id = 0;
 }

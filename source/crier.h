@@ -50,6 +50,8 @@ namespace godot
 
 		float spawnTimeCounter;
 		float spawnTimer;
+
+		static int id;
 	};
 }
 
