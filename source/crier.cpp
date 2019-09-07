@@ -17,6 +17,7 @@ namespace godot
 	}
 
 	Crier::Crier()
+		: random{}, twister{random()}, distribution(3.0f, 10.0f)
 	{
 	}
 
@@ -32,6 +33,9 @@ namespace godot
 
 		velocity = Vector2{100, 0};
 		timeCounter = 0;
+
+		spawnTimeCounter = 0;
+		spawnTimer = distribution(twister);
 	}
 
 	void Crier::_ready()
@@ -43,7 +47,16 @@ namespace godot
 
 	void Crier::_process(float delta)
 	{
-		SpawnBall();
+		if(!ball)
+		{
+			spawnTimeCounter += delta;
+			if(spawnTimeCounter > spawnTimer)
+			{
+				spawnTimeCounter = 0;
+				spawnTimer = distribution(twister);
+				SpawnBall();
+			}
+		}
 
 		move_and_slide(velocity);
 
@@ -86,9 +99,6 @@ namespace godot
 
 	void Crier::SpawnBall()
 	{
-		if(ball)
-			return;
-
 		ball = ballScene->instance();
 		add_child(ball);
 		ball->connect("ball_destroyed", this, "OnBallDestroyed");

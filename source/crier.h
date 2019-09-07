@@ -6,6 +6,7 @@
 #include <KinematicBody2D.hpp>
 #include <PackedScene.hpp>
 #include <Area2D.hpp>
+#include <random>
 
 namespace godot
 {
@@ -40,6 +41,13 @@ namespace godot
 		float timeCounter;
 		const float xTimer = 8;
 		float yTimer;
+
+		std::random_device random;
+		std::mt19937 twister;
+		std::uniform_real_distribution<float> distribution;
+
+		float spawnTimeCounter;
+		float spawnTimer;
 	};
 }
 
