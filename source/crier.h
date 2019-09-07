@@ -5,6 +5,7 @@
 #include <Node2D.hpp>
 #include <KinematicBody2D.hpp>
 #include <PackedScene.hpp>
+#include <Area2D.hpp>
 
 namespace godot
 {
@@ -23,12 +24,17 @@ namespace godot
 		void _process(float delta);
 
 		void OnBallDestroyed();
+		void OnBodyEntered(PhysicsBody2D* body);
+		void OnBodyExited(PhysicsBody2D* body);
 
 	private:
 		void SpawnBall();
 
 		Ref<PackedScene> ballScene;
 		Node* ball;
+		Area2D* area;
+		bool canOwnBallDoHarm;
+		int health;
 	};
 }
 
