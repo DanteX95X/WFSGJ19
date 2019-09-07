@@ -36,8 +36,6 @@ namespace godot
 		if(right_pressed)
 			velocity.x += speed;
 
-		Godot::print("before" + get_position());
 		move_and_slide(velocity);
-		Godot::print("after" + get_position());
 	}
 }
