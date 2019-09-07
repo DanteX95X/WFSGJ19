@@ -38,9 +38,11 @@ namespace godot
 		int health;
 
 		Vector2 velocity;
+		Vector2 velocityHorizontal;
+		Vector2 velocityVertical;
 		float timeCounter;
 		const float xTimer = 8;
-		float yTimer;
+		float yTimer = 1;
 
 		std::random_device random;
 		std::mt19937 twister;

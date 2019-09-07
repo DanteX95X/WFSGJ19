@@ -17,7 +17,7 @@ namespace godot
 	}
 
 	Crier::Crier()
-		: random{}, twister{random()}, distribution(3.0f, 10.0f)
+		: random{}, twister{random()}, distribution(1.0f, 7.0f)
 	{
 	}
 
@@ -31,7 +31,8 @@ namespace godot
 		ballScene = resource;
 		ball = nullptr;
 
-		velocity = Vector2{100, 0};
+		velocity = velocityHorizontal = Vector2{100, 0};
+		velocityVertical = Vector2{0 , 100};
 		timeCounter = 0;
 
 		spawnTimeCounter = 0;
@@ -61,10 +62,16 @@ namespace godot
 		move_and_slide(velocity);
 
 		timeCounter += delta;
-		if(timeCounter > xTimer)
+		if(velocity == velocityHorizontal && timeCounter > xTimer)
 		{
-			translate(Vector2{0, 100});
-			velocity.x = -velocity.x;
+			velocityHorizontal.x = -velocityHorizontal.x;
+			velocity = velocityVertical;
+			timeCounter = 0;
+			Godot::print("ufo " + get_name());
+		}
+		else if(velocity == velocityVertical && timeCounter > yTimer)
+		{
+			velocity = velocityHorizontal;
 			timeCounter = 0;
 			Godot::print("ufo " + get_name());
 		}
