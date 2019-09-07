@@ -7,6 +7,8 @@
 #include <PackedScene.hpp>
 #include <Area2D.hpp>
 #include <random>
+#include <Sprite.hpp>
+#include <Texture.hpp>
 
 namespace godot
 {
@@ -30,6 +32,7 @@ namespace godot
 
 	private:
 		void SpawnBall();
+		void ChangeSprite();
 
 		Ref<PackedScene> ballScene;
 		Node* ball;
@@ -52,6 +55,11 @@ namespace godot
 		float spawnTimer;
 
 		static int id;
+
+		Sprite* sprite;
+		Ref<Texture> low;
+		Ref<Texture> mid;
+		Ref<Texture> high;
 	};
 }
 

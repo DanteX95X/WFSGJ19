@@ -45,6 +45,17 @@ namespace godot
 		area = static_cast<Area2D*>(get_node("Area2D"));
 		area->connect("body_exited", this, "OnBodyExited");
 		area->connect("body_entered", this, "OnBodyEntered");
+
+		sprite = static_cast<Sprite*>(get_node("Sprite"));
+		Ref<Resource> resource = ResourceLoader::get_singleton()->load("res://graphics/low_hp.png");
+		low = resource;
+		resource = ResourceLoader::get_singleton()->load("res://graphics/mid_hp.png");
+		mid = resource;
+		resource = ResourceLoader::get_singleton()->load("res://graphics/high_hp.png");
+		high = resource;
+		ChangeSprite();
+
+		id = 0;
 	}
 
 	void Crier::_process(float delta)
@@ -88,6 +99,7 @@ namespace godot
 		if(body->get_name() == "Ball" && (body != ball || canOwnBallDoHarm))
 		{
 			--health;
+			ChangeSprite();
 			static_cast<Ball*>(body)->Destroy();
 			if(health <= 0)
 			{
@@ -112,6 +124,16 @@ namespace godot
 		ball->connect("ball_destroyed", this, "OnBallDestroyed");
 		add_collision_exception_with(ball);
 		canOwnBallDoHarm = false;
+	}
+
+	void Crier::ChangeSprite()
+	{
+		if(health >= 3)
+			sprite->set_texture(high);
+		else if(health == 2)
+			sprite->set_texture(mid);
+		else
+			sprite->set_texture(low);
 	}
 
 	int Crier::id = 0;
