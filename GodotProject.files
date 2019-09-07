@@ -1325,3 +1325,5 @@ source/./crier.h
 source/./crier.cpp
 source/./crier_column.h
 source/./crier_column.cpp
+source/./game_manager.h
+source/./game_manager.cpp

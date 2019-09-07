@@ -7,6 +7,10 @@ namespace godot
 	{
 		godot::register_method("_ready", &Paddle::_ready);
 		godot::register_method("_process", &Paddle::_process);
+
+		godot::register_method("OnBodyEntered", &Paddle::OnBodyEntered);
+
+		godot::register_signal<Paddle>("point_gained");
 	}
 
 	Paddle::Paddle()
@@ -23,6 +27,8 @@ namespace godot
 
 	void Paddle::_ready()
 	{
+		Node* area = get_node("Area2D");
+		area->connect("body_entered", this, "OnBodyEntered");
 	}
 
 	void Paddle::_process(float delta)
@@ -37,5 +43,13 @@ namespace godot
 			velocity.x += speed;
 
 		move_and_slide(velocity);
+	}
+
+	void Paddle::OnBodyEntered(PhysicsBody2D *body)
+	{
+		if(body->get_name() == "Ball")
+		{
+			emit_signal("point_gained");
+		}
 	}
 }

@@ -4,6 +4,7 @@
 #include "./ball.h"
 #include "./crier.h"
 #include "./crier_column.h"
+#include "./game_manager.h"
 //$include$ DO NOT DELETE THIS COMMENT
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options *o)
@@ -26,5 +27,6 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle)
 	godot::register_class<godot::Ball>();
 	godot::register_class<godot::Crier>();
 	godot::register_class<godot::CrierColumn>();
+	godot::register_class<godot::GameManager>();
 	//$register$ DO NOT DELETE THIS COMMENT
 }

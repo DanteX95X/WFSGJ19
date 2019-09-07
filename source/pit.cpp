@@ -10,6 +10,8 @@ namespace godot
 		godot::register_method("BodyEntered", &Pit::BodyEntered);
 
 		godot::register_method("OnBallDestroyed", &Pit::OnBallDestroyed);
+
+		godot::register_signal<Pit>("life_lost");
 	}
 
 	Pit::Pit()
@@ -41,6 +43,7 @@ namespace godot
 			Ball* ball = static_cast<Ball*>(body);
 			ball->connect("ball_destroyed", this, "OnBallDestroyed");
 			ball->Destroy();
+			emit_signal("life_lost");
 		}
 	}
 

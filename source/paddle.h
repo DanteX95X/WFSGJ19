@@ -21,6 +21,8 @@ namespace godot
 		void _ready();
 		void _process(float delta);
 
+		void OnBodyEntered(PhysicsBody2D* body);
+
 	private:
 		const float speed = 1000;
 	};

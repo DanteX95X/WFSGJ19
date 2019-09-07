@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://physics/bouncy_material.tres" type="PhysicsMaterial" id=1]
-[ext_resource path="res://scripts/Pit.gdns" type="Script" id=2]
-[ext_resource path="res://scenes/paddle.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/crier.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/GameManager.gdns" type="Script" id=1]
+[ext_resource path="res://physics/bouncy_material.tres" type="PhysicsMaterial" id=2]
+[ext_resource path="res://scripts/Pit.gdns" type="Script" id=3]
+[ext_resource path="res://scenes/paddle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/crier.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.99639, 1 )
@@ -41,6 +42,8 @@ extents = Vector2( 1000, 0.62 )
 extents = Vector2( 1000, 10 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+Lifes = 5
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 964.077, 522.28 )
@@ -51,12 +54,11 @@ texture = SubResource( 2 )
 position = Vector2( 961.523, 1170.79 )
 rotation = 1.5708
 scale = Vector2( 0.0998372, 2097.18 )
-physics_material_override = ExtResource( 1 )
-script = ExtResource( 2 )
+physics_material_override = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Pit"]
 rotation = -1.38778e-17
-scale = Vector2( 1, 1 )
 texture = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Pit"]
@@ -75,7 +77,7 @@ texture = SubResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="WallE"]
 collision_mask = 3
-physics_material_override = ExtResource( 1 )
+physics_material_override = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallE/StaticBody2D"]
 shape = SubResource( 8 )
@@ -88,7 +90,7 @@ scale = Vector2( 0.0998372, 2097.18 )
 texture = SubResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="WallN"]
-physics_material_override = ExtResource( 1 )
+physics_material_override = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallN/StaticBody2D"]
 shape = SubResource( 9 )
@@ -100,39 +102,39 @@ scale = Vector2( 0.0720434, 1108.76 )
 texture = SubResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="WallW"]
-physics_material_override = ExtResource( 1 )
+physics_material_override = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallW/StaticBody2D"]
 shape = SubResource( 10 )
 
-[node name="Paddle" parent="." instance=ExtResource( 3 )]
+[node name="Paddle" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1248.67, 1025.32 )
 
-[node name="Crier" parent="." instance=ExtResource( 4 )]
+[node name="Crier" parent="." instance=ExtResource( 5 )]
 position = Vector2( 120, 110 )
 
-[node name="Crier2" parent="." instance=ExtResource( 4 )]
+[node name="Crier2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 220, 110 )
 
-[node name="Crier3" parent="." instance=ExtResource( 4 )]
+[node name="Crier3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 320, 110 )
 
-[node name="Crier4" parent="." instance=ExtResource( 4 )]
+[node name="Crier4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 420, 110 )
 
-[node name="Crier5" parent="." instance=ExtResource( 4 )]
+[node name="Crier5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 520, 110 )
 
-[node name="Crier6" parent="." instance=ExtResource( 4 )]
+[node name="Crier6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 620, 110 )
 
-[node name="Crier7" parent="." instance=ExtResource( 4 )]
+[node name="Crier7" parent="." instance=ExtResource( 5 )]
 position = Vector2( 720, 110 )
 
-[node name="Crier8" parent="." instance=ExtResource( 4 )]
+[node name="Crier8" parent="." instance=ExtResource( 5 )]
 position = Vector2( 820, 110 )
 
-[node name="Crier9" parent="." instance=ExtResource( 4 )]
+[node name="Crier9" parent="." instance=ExtResource( 5 )]
 position = Vector2( 920, 110 )
 
 [node name="InvisiableWall" type="StaticBody2D" parent="."]
