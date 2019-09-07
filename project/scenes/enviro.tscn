@@ -47,22 +47,24 @@ position = Vector2( 964.077, 522.28 )
 scale = Vector2( 1.02508, 1333.24 )
 texture = SubResource( 2 )
 
-[node name="Pit" type="Sprite" parent="."]
+[node name="Pit" type="StaticBody2D" parent="."]
 position = Vector2( 961.523, 1170.79 )
 rotation = 1.5708
 scale = Vector2( 0.0998372, 2097.18 )
-texture = SubResource( 4 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Pit"]
 physics_material_override = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pit/StaticBody2D"]
+[node name="Sprite" type="Sprite" parent="Pit"]
+rotation = -1.38778e-17
+scale = Vector2( 1, 1 )
+texture = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pit"]
 shape = SubResource( 5 )
 
-[node name="Area2D" type="Area2D" parent="Pit/StaticBody2D"]
+[node name="Area2D" type="Area2D" parent="Pit"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pit/StaticBody2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pit/Area2D"]
 shape = SubResource( 5 )
 
 [node name="WallE" type="Sprite" parent="."]
@@ -132,9 +134,6 @@ position = Vector2( 820, 110 )
 
 [node name="Crier9" parent="." instance=ExtResource( 4 )]
 position = Vector2( 920, 110 )
-
-[node name="Crier10" parent="." instance=ExtResource( 4 )]
-position = Vector2( 119.466, 938.352 )
 
 [node name="InvisiableWall" type="StaticBody2D" parent="."]
 position = Vector2( 1100.35, 985.986 )
