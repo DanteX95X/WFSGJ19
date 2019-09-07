@@ -29,6 +29,8 @@ namespace godot
 		Ref<Resource> resource = ResourceLoader::get_singleton()->load("res://scenes/ball.tscn");
 		ballScene = resource;
 		ball = nullptr;
+
+		velocity = Vector2{100, 0};
 	}
 
 	void Crier::_ready()
@@ -41,6 +43,16 @@ namespace godot
 	void Crier::_process(float delta)
 	{
 		//SpawnBall();
+
+		move_and_slide(velocity);
+
+		timeCounter += delta;
+		if(timeCounter > xTimer)
+		{
+			velocity.x = -velocity.x;
+			timeCounter = 0;
+			Godot::print("ufo " + get_name());
+		}
 	}
 
 	void Crier::OnBallDestroyed()

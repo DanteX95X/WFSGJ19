@@ -35,6 +35,11 @@ namespace godot
 		Area2D* area;
 		bool canOwnBallDoHarm;
 		int health;
+
+		Vector2 velocity;
+		float timeCounter;
+		const float xTimer = 8;
+		float yTimer;
 	};
 }
 
