@@ -56,6 +56,7 @@ physics_material_override = ExtResource( 1 )
 shape = SubResource( 10 )
 
 [node name="WallE" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 1934.88, 541.486 )
 scale = Vector2( 0.0720434, 1076.38 )
 texture = SubResource( 4 )
@@ -68,6 +69,7 @@ physics_material_override = ExtResource( 1 )
 shape = SubResource( 7 )
 
 [node name="WallN" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 965.318, -41.0121 )
 rotation = 1.5708
 scale = Vector2( 0.0998372, 2097.18 )
@@ -80,6 +82,7 @@ physics_material_override = ExtResource( 1 )
 shape = SubResource( 9 )
 
 [node name="WallW" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( -11.8366, 553.88 )
 scale = Vector2( 0.0720434, 1108.76 )
 texture = SubResource( 4 )
@@ -94,4 +97,4 @@ shape = SubResource( 8 )
 position = Vector2( 981.914, 476.409 )
 
 [node name="Paddle" parent="." instance=ExtResource( 3 )]
-position = Vector2( 978.362, 853.064 )
+position = Vector2( 1248.67, 1025.32 )
