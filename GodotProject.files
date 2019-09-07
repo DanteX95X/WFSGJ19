@@ -1323,3 +1323,5 @@ source/./ball.h
 source/./ball.cpp
 source/./crier.h
 source/./crier.cpp
+source/./crier_column.h
+source/./crier_column.cpp

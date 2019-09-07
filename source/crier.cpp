@@ -40,12 +40,7 @@ namespace godot
 
 	void Crier::_process(float delta)
 	{
-		if(!ball)
-		{
-			SpawnBall();
-		}
-
-
+		//SpawnBall();
 	}
 
 	void Crier::OnBallDestroyed()
@@ -77,6 +72,9 @@ namespace godot
 
 	void Crier::SpawnBall()
 	{
+		if(ball)
+			return;
+
 		ball = ballScene->instance();
 		add_child(ball);
 		ball->connect("ball_destroyed", this, "OnBallDestroyed");
