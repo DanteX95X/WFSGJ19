@@ -9,7 +9,7 @@ namespace godot
 {
 	class Ball : public godot::RigidBody2D
 	{
-		GODOT_CLASS(Ball, godot::Node2D)
+		GODOT_CLASS(Ball, godot::RigidBody2D)
 
 	public:
 		static void _register_methods();

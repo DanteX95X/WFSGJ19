@@ -8,6 +8,8 @@ namespace godot
 		godot::register_method("_ready", &Pit::_ready);
 		godot::register_method("_process", &Pit::_process);
 		godot::register_method("BodyEntered", &Pit::BodyEntered);
+
+		godot::register_method("OnBallDestroyed", &Pit::OnBallDestroyed);
 	}
 
 	Pit::Pit()
@@ -37,7 +39,13 @@ namespace godot
 		if(body->get_name() == "Ball")
 		{
 			Ball* ball = static_cast<Ball*>(body);
+			ball->connect("ball_destroyed", this, "OnBallDestroyed");
 			ball->Destroy();
 		}
+	}
+
+	void Pit::OnBallDestroyed()
+	{
+		Godot::print("ball_destroyed");
 	}
 }

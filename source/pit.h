@@ -10,7 +10,7 @@ namespace godot
 {
 	class Pit : public godot::StaticBody2D
 	{
-		GODOT_CLASS(Pit, godot::Node2D)
+		GODOT_CLASS(Pit, godot::StaticBody2D)
 
 	public:
 		static void _register_methods();
@@ -23,6 +23,7 @@ namespace godot
 		void _process(float delta);
 
 		void BodyEntered(PhysicsBody2D* body);
+		void OnBallDestroyed();
 
 	private:
 		Area2D* area;

@@ -7,7 +7,7 @@ namespace godot
 		godot::register_method("_ready", &Ball::_ready);
 		godot::register_method("_process", &Ball::_process);
 
-		//godot::register_signal<Ball>(ballDestroyedSignal);
+		godot::register_signal<Ball>(/*ballDestroyedSignal*/"ball_destroyed");
 	}
 
 	Ball::Ball()
@@ -32,7 +32,7 @@ namespace godot
 
 	void Ball::Destroy()
 	{
-		//emit_signal(ballDestroyedSignal);
+		emit_signal(/*ballDestroyedSignal*/"ball_destroyed");
 		queue_free();
 	}
 
