@@ -20,7 +20,7 @@ namespace godot
 	void Intro::_init()
 	{
 		toWrite = R"ufo(Once upon a time,
-in a distant land,
+in a not so distant land,
 where nobody heard about game engines,
 programmers had a really hard time making games.
 The only way to ease their suffering was to cry...

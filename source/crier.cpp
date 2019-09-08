@@ -36,6 +36,7 @@ namespace godot
 		timeCounter = 0;
 
 		spawnTimeCounter = 0;
+		destroy = false;
 		spawnTimer = id;
 		++id;
 	}
@@ -63,6 +64,11 @@ namespace godot
 
 	void Crier::_process(float delta)
 	{
+		if(destroy && !damage->is_playing())
+		{
+			queue_free();
+		}
+
 		if(!ball)
 		{
 			spawnTimeCounter += delta;
@@ -106,8 +112,9 @@ namespace godot
 			static_cast<Ball*>(body)->Destroy();
 			if(health <= 0)
 			{
-				scream->play();
-				queue_free();
+				damage->play();
+				//queue_free();
+				destroy = true;
 			}
 			else
 			{

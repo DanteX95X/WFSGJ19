@@ -16,8 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="WFSGJ19"
-run/main_scene="res://scenes/level.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/intro.tscn"
+config/icon="res://graphics/mid_hp.png"
 
 [autoload]
 
@@ -27,6 +27,7 @@ scaling="*res://scripts/scaling.gd"
 
 window/size/width=1280
 window/size/height=720
+window/size/borderless=true
 window/stretch/mode="2d"
 
 [layer_names]

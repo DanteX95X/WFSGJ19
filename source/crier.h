@@ -64,6 +64,8 @@ namespace godot
 
 		AudioStreamPlayer* scream;
 		AudioStreamPlayer* damage;
+
+		bool destroy;
 	};
 }
 
