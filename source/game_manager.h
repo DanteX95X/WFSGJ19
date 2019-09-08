@@ -3,6 +3,7 @@
 
 #include <Godot.hpp>
 #include <Node2D.hpp>
+#include <Label.hpp>
 
 namespace godot
 {
@@ -30,6 +31,10 @@ namespace godot
 
 		Node* pit;
 		Node* paddle;
+
+		Label* score;
+		Label* bonus;
+		Label* lifesLeft;
 	};
 }
 

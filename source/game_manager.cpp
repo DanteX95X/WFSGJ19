@@ -35,10 +35,17 @@ namespace godot
 
 		paddle = get_node("Paddle");
 		paddle->connect("point_gained", this, "OnPointGained");
+
+		score = static_cast<Label*>(get_node("Score"));
+		bonus = static_cast<Label*>(get_node("Bonus"));
+		lifesLeft = static_cast<Label*>(get_node("Lifes"));
 	}
 
 	void GameManager::_process(float delta)
 	{
+		score->set_text(String::num(points));
+		bonus->set_text(String::num(multiplier));
+		lifesLeft->set_text(String::num(lifes - 1));
 	}
 
 	void GameManager::OnLifeLost()
@@ -55,6 +62,7 @@ namespace godot
 	void GameManager::OnPointGained()
 	{
 		points += multiplier;
+		++multiplier;
 		Godot::print("points gained");
 	}
 }

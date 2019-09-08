@@ -27,7 +27,7 @@ Lifes = 5
 
 [node name="Control" parent="." instance=ExtResource( 2 )]
 
-[node name="Label" type="Label" parent="."]
+[node name="Background code" type="Label" parent="."]
 margin_left = 67.0
 margin_top = 60.0
 margin_right = 1864.0
@@ -35,6 +35,54 @@ margin_bottom = 1082.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
 script = ExtResource( 4 )
+
+[node name="ScoreTitle" type="Label" parent="."]
+margin_left = 1204.0
+margin_top = 413.0
+margin_right = 1441.0
+margin_bottom = 486.0
+custom_fonts/font = ExtResource( 3 )
+text = "SCORE"
+
+[node name="BonusTitle" type="Label" parent="."]
+margin_left = 1204.0
+margin_top = 477.59
+margin_right = 1441.0
+margin_bottom = 550.59
+custom_fonts/font = ExtResource( 3 )
+text = "BONUS"
+
+[node name="LifesTitle" type="Label" parent="."]
+margin_left = 1204.0
+margin_top = 540.13
+margin_right = 1441.0
+margin_bottom = 613.13
+custom_fonts/font = ExtResource( 3 )
+text = "LIFES"
+
+[node name="Lifes" type="Label" parent="."]
+margin_left = 1596.45
+margin_top = 540.13
+margin_right = 1833.45
+margin_bottom = 613.13
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+
+[node name="Score" type="Label" parent="."]
+margin_left = 1597.0
+margin_top = 413.0
+margin_right = 1834.0
+margin_bottom = 476.0
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+
+[node name="Bonus" type="Label" parent="."]
+margin_left = 1596.73
+margin_top = 473.0
+margin_right = 1833.73
+margin_bottom = 546.0
+custom_fonts/font = ExtResource( 3 )
+text = "1"
 
 [node name="Pit" type="StaticBody2D" parent="."]
 position = Vector2( 961.523, 1170.79 )
