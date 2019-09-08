@@ -9,16 +9,16 @@
 [ext_resource path="res://scenes/paddle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/crier.tscn" type="PackedScene" id=8]
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 3 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1000, 0.5 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 1000, 10 )
 
 [node name="Node2D" type="Node2D"]
@@ -46,18 +46,18 @@ script = ExtResource( 6 )
 [node name="Sprite" type="Sprite" parent="Pit"]
 visible = false
 rotation = -1.38778e-17
-texture = SubResource( 4 )
+texture = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Pit"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="Pit"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pit/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="Paddle" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1248.67, 1025.32 )
+position = Vector2( 548.794, 1025.32 )
 
 [node name="Crier" parent="." instance=ExtResource( 8 )]
 position = Vector2( 120, 110 )
@@ -93,4 +93,4 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisiableWall"]
 position = Vector2( -126.725, 12.3635 )
-shape = SubResource( 11 )
+shape = SubResource( 4 )

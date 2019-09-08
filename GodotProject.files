@@ -1329,3 +1329,5 @@ source/./game_manager.h
 source/./game_manager.cpp
 source/./terminal.h
 source/./terminal.cpp
+source/./menu_paddle.h
+source/./menu_paddle.cpp
