@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/background.tscn" type="PackedScene" id=1]
-[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=2]
-[ext_resource path="res://scripts/Intro.gdns" type="Script" id=3]
-[ext_resource path="res://scripts/MenuPaddle.gdns" type="Script" id=4]
-[ext_resource path="res://bigger_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scripts/MenuPaddle.gdns" type="Script" id=2]
+[ext_resource path="res://bigger_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=4]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
@@ -44,7 +43,7 @@ tracks/0/keys = {
 resource_name = "Intro"
 length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Intro:visible")
+tracks/0/path = NodePath("Labels:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -53,34 +52,34 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Labels:visible")
+tracks/1/path = NodePath("Sprite:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:visible")
+tracks/2/path = NodePath("Labels/Bloody:rect_position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1.4 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -800, 331.806 ), Vector2( 336.825, 331.806 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Labels/Bloody:rect_position")
+tracks/3/path = NodePath("Labels/Tears:rect_position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -89,31 +88,19 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -800, 331.806 ), Vector2( 336.825, 331.806 ) ]
+"values": [ Vector2( 2100, 331.806 ), Vector2( 1026.99, 331.806 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Labels/Tears:rect_position")
+tracks/4/path = NodePath("Buttons:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 1.2 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 2100, 331.806 ), Vector2( 1026.99, 331.806 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Buttons:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 1.2 ),
-"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 
 [node name="Node2D" type="Node2D"]
@@ -122,24 +109,16 @@ tracks/5/keys = {
 margin_top = 2.51752
 margin_bottom = 2.51752
 
-[node name="Intro" type="Label" parent="."]
-margin_left = 72.0
-margin_top = 65.0
-margin_right = 1846.0
-margin_bottom = 772.0
-custom_fonts/font = ExtResource( 2 )
-script = ExtResource( 3 )
-
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
 position = Vector2( 1026.73, 1025.32 )
 scale = Vector2( 0.142364, 21.1922 )
 texture = SubResource( 2 )
 centered = false
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 
 [node name="Blinking" type="AnimationPlayer" parent="."]
-autoplay = "Blink"
+autoplay = "Intro"
 anims/Blink = SubResource( 7 )
 anims/Intro = SubResource( 8 )
 
@@ -151,7 +130,7 @@ margin_left = 336.825
 margin_top = 331.806
 margin_right = 954.825
 margin_bottom = 656.806
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.705882, 0, 0, 1 )
 text = "Bloody
 "
@@ -161,7 +140,7 @@ margin_left = 1026.99
 margin_top = 331.806
 margin_right = 1645.0
 margin_bottom = 656.806
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.376471, 0.4, 1, 1 )
 text = "Tears"
 
@@ -173,7 +152,7 @@ margin_left = 608.289
 margin_top = 951.528
 margin_right = 997.289
 margin_bottom = 1107.53
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 4 )
 text = "START"
 
 [node name="Quit" type="Label" parent="Buttons"]
@@ -181,6 +160,6 @@ margin_left = 1102.27
 margin_top = 951.528
 margin_right = 1491.27
 margin_bottom = 1107.53
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 4 )
 text = "QUIT
 "

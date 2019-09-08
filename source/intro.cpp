@@ -1,4 +1,5 @@
 #include "intro.h"
+#include <SceneTree.hpp>
 
 namespace godot
 {
@@ -24,8 +25,6 @@ where nobody heard about game engines,
 programmers had a really hard time making games.
 The only way to ease their suffering was to cry...
 )ufo";
-
-		done = false;
 	}
 
 	void Intro::_ready()
@@ -50,14 +49,12 @@ R"ufo(
 
 		text = get_text();
 		timeCounter = 0;
-
-		player = static_cast<AnimationPlayer*>(get_node("../Blinking"));
 	}
 
 	void Intro::_process(float delta)
 	{
 		timeCounter += delta;
-		if(timeCounter > 0.1f && !done)
+		if(timeCounter > 0.1f)
 		{
 			timeCounter = 0;
 
@@ -73,8 +70,7 @@ R"ufo(
 
 			if(toWrite.empty())
 			{
-				done = true;
-				player->play("Intro");
+				get_tree()->change_scene("res://scenes/menu.tscn");
 			}
 		}
 	}

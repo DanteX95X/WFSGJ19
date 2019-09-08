@@ -59,6 +59,8 @@ namespace godot
 		if(!found)
 		{
 			Godot::print("Level completed");
+			get_tree()->change_scene("res://scenes/menu.tscn");
+			//Maybe another level
 		}
 	}
 
@@ -69,7 +71,7 @@ namespace godot
 		if(lifes <= 0)
 		{
 			Godot::print("Game Over");
-			//get_tree()->change_scene("res://scenes/level.tscn");
+			get_tree()->change_scene("res://scenes/menu.tscn");
 		}
 	}
 

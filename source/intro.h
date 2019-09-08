@@ -27,11 +27,6 @@ namespace godot
 		String toWrite;
 
 		float timeCounter;
-
-		AnimationPlayer* player;
-
-		bool done;
-
 	};
 }
 
