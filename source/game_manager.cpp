@@ -46,6 +46,20 @@ namespace godot
 		score->set_text(String::num(points));
 		bonus->set_text(String::num(multiplier));
 		lifesLeft->set_text(String::num(lifes - 1));
+
+		bool found = false;
+		for(int i = 0; i < get_child_count(); ++i)
+		{
+			if(get_child(i)->get_name() == "Crier")
+			{
+				found = true;
+				break;
+			}
+		}
+		if(!found)
+		{
+			Godot::print("Level completed");
+		}
 	}
 
 	void GameManager::OnLifeLost()
