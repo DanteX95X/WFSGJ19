@@ -1331,3 +1331,5 @@ source/./terminal.h
 source/./terminal.cpp
 source/./menu_paddle.h
 source/./menu_paddle.cpp
+source/./intro.h
+source/./intro.cpp

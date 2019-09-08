@@ -7,6 +7,7 @@
 #include "./game_manager.h"
 #include "./terminal.h"
 #include "./menu_paddle.h"
+#include "./intro.h"
 //$include$ DO NOT DELETE THIS COMMENT
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options *o)
@@ -32,5 +33,6 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle)
 	godot::register_class<godot::GameManager>();
 	godot::register_class<godot::Terminal>();
 	godot::register_class<godot::MenuPaddle>();
+	godot::register_class<godot::Intro>();
 	//$register$ DO NOT DELETE THIS COMMENT
 }
