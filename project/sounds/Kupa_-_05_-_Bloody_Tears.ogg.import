@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Kupa_-_05_-_Bloody_Tears.ogg-d6e41b2a8ec03d1aec448d2517a97bb3.oggstr"
+
+[deps]
+
+source_file="res://sounds/Kupa_-_05_-_Bloody_Tears.ogg"
+dest_files=[ "res://.import/Kupa_-_05_-_Bloody_Tears.ogg-d6e41b2a8ec03d1aec448d2517a97bb3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

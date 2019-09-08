@@ -58,6 +58,11 @@ R"ufo(
 		{
 			timeCounter = 0;
 
+			if(toWrite.empty())
+			{
+				get_tree()->change_scene("res://scenes/menu.tscn");
+			}
+
 			String substring = toWrite.substr(0, 1);
 			text+= substring;
 			if(substring == "\n")
@@ -67,11 +72,6 @@ R"ufo(
 			}
 			toWrite.erase(0, 1);
 			set_text(text);
-
-			if(toWrite.empty())
-			{
-				get_tree()->change_scene("res://scenes/menu.tscn");
-			}
 		}
 	}
 }

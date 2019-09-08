@@ -94,7 +94,10 @@ namespace godot
 		Godot::print("Level completed");
 		++GlobalData::Instance().level;
 		if(GlobalData::Instance().level >= GlobalData::Instance().maxLevel)
+		{
 			get_tree()->change_scene("res://scenes/menu.tscn");
+			return;
+		}
 		get_tree()->change_scene("res://scenes/level" + String::num(GlobalData::Instance().level) + ".tscn");
 	}
 }

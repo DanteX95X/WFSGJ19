@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/458396__befig__monkey-cry.ogg-a4168a0837ff60b832b450438685aa53.oggstr"
+
+[deps]
+
+source_file="res://sounds/458396__befig__monkey-cry.ogg"
+dest_files=[ "res://.import/458396__befig__monkey-cry.ogg-a4168a0837ff60b832b450438685aa53.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

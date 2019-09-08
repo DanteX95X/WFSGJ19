@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/GRY_-_02_-_Fail_Better.ogg-4ef4177b6f61611a3a6b477e195cc1dc.oggstr"
+
+[deps]
+
+source_file="res://sounds/GRY_-_02_-_Fail_Better.ogg"
+dest_files=[ "res://.import/GRY_-_02_-_Fail_Better.ogg-4ef4177b6f61611a3a6b477e195cc1dc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
