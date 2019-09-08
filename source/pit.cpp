@@ -30,6 +30,8 @@ namespace godot
 	{
 		 area = static_cast<Area2D*>(get_node("Area2D"));
 		 area->connect("body_entered", this, "BodyEntered");
+
+		 hit = static_cast<AudioStreamPlayer*>(get_node("Hit"));
 	}
 
 	void Pit::_process(float delta)
@@ -40,6 +42,7 @@ namespace godot
 	{
 		if(body->get_name() == "Ball")
 		{
+			hit->play();
 			Ball* ball = static_cast<Ball*>(body);
 			ball->connect("ball_destroyed", this, "OnBallDestroyed");
 			ball->Destroy();

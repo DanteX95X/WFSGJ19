@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/371381__marcello777__cry-2.wav-91b25d81f0e32fdcfd180ad1f56755a3.sample"
+
+[deps]
+
+source_file="res://sounds/371381__marcello777__cry-2.wav"
+dest_files=[ "res://.import/371381__marcello777__cry-2.wav-91b25d81f0e32fdcfd180ad1f56755a3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

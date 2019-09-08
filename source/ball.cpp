@@ -1,6 +1,7 @@
 #include "ball.h"
 #include <random>
 #include <iostream>
+#include <AudioStreamPlayer.hpp>
 
 namespace godot
 {

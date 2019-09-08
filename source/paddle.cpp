@@ -29,6 +29,8 @@ namespace godot
 	{
 		Node* area = get_node("Area2D");
 		area->connect("body_entered", this, "OnBodyEntered");
+
+		bounce = static_cast<AudioStreamPlayer*>(get_node("Bounce"));
 	}
 
 	void Paddle::_process(float delta)
@@ -49,6 +51,7 @@ namespace godot
 	{
 		if(body->get_name() == "Ball")
 		{
+			bounce->play();
 			emit_signal("point_gained");
 		}
 	}

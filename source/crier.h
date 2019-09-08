@@ -9,6 +9,7 @@
 #include <random>
 #include <Sprite.hpp>
 #include <Texture.hpp>
+#include <AudioStreamPlayer.hpp>
 
 namespace godot
 {
@@ -60,6 +61,9 @@ namespace godot
 		Ref<Texture> low;
 		Ref<Texture> mid;
 		Ref<Texture> high;
+
+		AudioStreamPlayer* scream;
+		AudioStreamPlayer* damage;
 	};
 }
 

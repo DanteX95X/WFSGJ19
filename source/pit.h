@@ -5,6 +5,7 @@
 #include <Node2D.hpp>
 #include <StaticBody2D.hpp>
 #include <Area2D.hpp>
+#include <AudioStreamPlayer.hpp>
 
 namespace godot
 {
@@ -27,6 +28,8 @@ namespace godot
 
 	private:
 		Area2D* area;
+
+		AudioStreamPlayer* hit;
 	};
 }
 

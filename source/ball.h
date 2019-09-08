@@ -5,6 +5,8 @@
 #include <Node2D.hpp>
 #include <RigidBody2D.hpp>
 #include <Sprite.hpp>
+#include <AudioStreamPlayer.hpp>
+#include <Area2D.hpp>
 
 namespace godot
 {
@@ -23,6 +25,8 @@ namespace godot
 		void _process(float delta);
 
 		void Destroy();
+
+		void OnBodyEntered(PhysicsBody2D* body);
 
 	private:
 		Sprite* sprite;

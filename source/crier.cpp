@@ -55,6 +55,9 @@ namespace godot
 		high = resource;
 		ChangeSprite();
 
+		scream = static_cast<AudioStreamPlayer*>(get_node("Scream"));
+		damage = static_cast<AudioStreamPlayer*>(get_node("Damage"));
+
 		id = 0;
 	}
 
@@ -103,7 +106,12 @@ namespace godot
 			static_cast<Ball*>(body)->Destroy();
 			if(health <= 0)
 			{
+				scream->play();
 				queue_free();
+			}
+			else
+			{
+				damage->play();
 			}
 		}
 	}

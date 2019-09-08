@@ -1,33 +1,33 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Paddle.gdns" type="Script" id=1]
+[ext_resource path="res://sounds/448080__breviceps__wet-click.wav" type="AudioStream" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 145.566, 32.8555 )
 
-[sub_resource type="Gradient" id=8]
+[sub_resource type="Gradient" id=2]
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=9]
-gradient = SubResource( 8 )
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 146.786, 10 )
 
-[sub_resource type="Gradient" id=10]
+[sub_resource type="Gradient" id=5]
 colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1 )
 
-[sub_resource type="GradientTexture" id=11]
-gradient = SubResource( 10 )
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
 
-[sub_resource type="Gradient" id=12]
+[sub_resource type="Gradient" id=7]
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 12 )
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
 
-[sub_resource type="Animation" id=7]
-resource_name = "Blink"
+[sub_resource type="Animation" id=9]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("CollisionShape2D/Sprite:texture")
@@ -39,7 +39,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ SubResource( 9 ), SubResource( 11 ), SubResource( 13 ) ]
+"values": [ SubResource( 3 ), SubResource( 6 ), SubResource( 8 ) ]
 }
 
 [node name="Paddle" type="KinematicBody2D"]
@@ -54,7 +54,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="CollisionShape2D"]
 position = Vector2( 0.0245476, 0.11417 )
 scale = Vector2( 0.142364, 66.2259 )
-texture = SubResource( 9 )
+texture = SubResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -66,4 +66,7 @@ shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Blink"
-anims/Blink = SubResource( 7 )
+anims/Blink = SubResource( 9 )
+
+[node name="Bounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )

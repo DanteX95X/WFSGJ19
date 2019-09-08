@@ -4,6 +4,7 @@
 #include <Godot.hpp>
 #include <Node2D.hpp>
 #include <KinematicBody2D.hpp>
+#include <AudioStreamPlayer.hpp>
 
 namespace godot
 {
@@ -25,6 +26,8 @@ namespace godot
 
 	private:
 		const float speed = 1000;
+
+		AudioStreamPlayer* bounce;
 	};
 }
 

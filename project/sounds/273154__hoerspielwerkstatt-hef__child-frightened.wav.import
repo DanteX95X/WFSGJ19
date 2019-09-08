@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/273154__hoerspielwerkstatt-hef__child-frightened.wav-c92a092f009491e58f1ffc4fdfef3e65.sample"
+
+[deps]
+
+source_file="res://sounds/273154__hoerspielwerkstatt-hef__child-frightened.wav"
+dest_files=[ "res://.import/273154__hoerspielwerkstatt-hef__child-frightened.wav-c92a092f009491e58f1ffc4fdfef3e65.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
