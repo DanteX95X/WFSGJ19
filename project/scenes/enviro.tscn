@@ -110,6 +110,30 @@ position = Vector2( 548.794, 1025.32 )
 [node name="Crier" parent="." instance=ExtResource( 8 )]
 position = Vector2( 120, 110 )
 
+[node name="Crier2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 220, 110 )
+
+[node name="Crier3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 320, 110 )
+
+[node name="Crier4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 420, 110 )
+
+[node name="Crier5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 520, 110 )
+
+[node name="Crier6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 620, 110 )
+
+[node name="Crier7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 720, 110 )
+
+[node name="Crier8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 820, 110 )
+
+[node name="Crier9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 920, 110 )
+
 [node name="InvisiableWall" type="StaticBody2D" parent="."]
 position = Vector2( 1100.35, 985.986 )
 collision_layer = 4
