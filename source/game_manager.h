@@ -7,6 +7,30 @@
 
 namespace godot
 {
+	class GlobalData
+	{
+	public:
+		static GlobalData& Instance()
+		{
+			static GlobalData instance;
+			return instance;
+		}
+
+		int score;
+		int highScore;
+		int level = 0;
+		const int maxLevel;
+
+	private:
+		GlobalData()
+			: score{0}, highScore{0}, level{0}, maxLevel{3}
+		{
+
+		}
+		GlobalData(const GlobalData&) = delete;
+		GlobalData(GlobalData&&) = delete;
+	};
+
 	class GameManager : public godot::Node2D
 	{
 		GODOT_CLASS(GameManager, godot::Node2D)

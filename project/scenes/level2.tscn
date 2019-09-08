@@ -1,0 +1,144 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/GameManager.gdns" type="Script" id=1]
+[ext_resource path="res://scenes/background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scripts/Terminal.gdns" type="Script" id=4]
+[ext_resource path="res://physics/bouncy_material.tres" type="PhysicsMaterial" id=5]
+[ext_resource path="res://scripts/Pit.gdns" type="Script" id=6]
+[ext_resource path="res://scenes/paddle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/crier.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1000, 0.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1000, 10 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+Lifes = 5
+
+[node name="Control" parent="." instance=ExtResource( 2 )]
+
+[node name="Background code" type="Label" parent="."]
+margin_left = 67.0
+margin_top = 60.0
+margin_right = 1864.0
+margin_bottom = 1082.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+script = ExtResource( 4 )
+
+[node name="ScoreTitle" type="Label" parent="."]
+margin_left = 1204.0
+margin_top = 413.0
+margin_right = 1441.0
+margin_bottom = 486.0
+custom_fonts/font = ExtResource( 3 )
+text = "SCORE"
+
+[node name="BonusTitle" type="Label" parent="."]
+margin_left = 1204.0
+margin_top = 477.59
+margin_right = 1441.0
+margin_bottom = 550.59
+custom_fonts/font = ExtResource( 3 )
+text = "BONUS"
+
+[node name="LifesTitle" type="Label" parent="."]
+margin_left = 1204.0
+margin_top = 540.13
+margin_right = 1441.0
+margin_bottom = 613.13
+custom_fonts/font = ExtResource( 3 )
+text = "LIFES"
+
+[node name="Lifes" type="Label" parent="."]
+margin_left = 1596.45
+margin_top = 540.13
+margin_right = 1833.45
+margin_bottom = 613.13
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+
+[node name="Score" type="Label" parent="."]
+margin_left = 1597.0
+margin_top = 413.0
+margin_right = 1834.0
+margin_bottom = 476.0
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+
+[node name="Bonus" type="Label" parent="."]
+margin_left = 1596.73
+margin_top = 473.0
+margin_right = 1833.73
+margin_bottom = 546.0
+custom_fonts/font = ExtResource( 3 )
+text = "1"
+
+[node name="Pit" type="StaticBody2D" parent="."]
+position = Vector2( 961.523, 1170.79 )
+rotation = 1.5708
+scale = Vector2( 0.0998372, 2097.18 )
+physics_material_override = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Pit"]
+visible = false
+rotation = -1.38778e-17
+texture = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pit"]
+shape = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Pit"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pit/Area2D"]
+shape = SubResource( 3 )
+
+[node name="Paddle" parent="." instance=ExtResource( 7 )]
+position = Vector2( 548.794, 1025.32 )
+
+[node name="Crier" parent="." instance=ExtResource( 8 )]
+position = Vector2( 120, 110 )
+
+[node name="Crier2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 220, 110 )
+
+[node name="Crier3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 320, 110 )
+
+[node name="Crier4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 420, 110 )
+
+[node name="Crier5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 520, 110 )
+
+[node name="Crier6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 620, 110 )
+
+[node name="Crier7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 720, 110 )
+
+[node name="Crier8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 820, 110 )
+
+[node name="Crier9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 920, 110 )
+
+[node name="InvisiableWall" type="StaticBody2D" parent="."]
+position = Vector2( 1100.35, 985.986 )
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisiableWall"]
+position = Vector2( -126.725, 12.3635 )
+shape = SubResource( 4 )

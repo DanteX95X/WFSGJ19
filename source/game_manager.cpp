@@ -24,7 +24,7 @@ namespace godot
 
 	void GameManager::_init()
 	{
-		points = 0;
+		points = GlobalData::Instance().score;
 		multiplier = 1;
 	}
 
@@ -58,8 +58,12 @@ namespace godot
 		}
 		if(!found)
 		{
+			GlobalData::Instance().score = points;
 			Godot::print("Level completed");
-			get_tree()->change_scene("res://scenes/menu.tscn");
+			++GlobalData::Instance().level;
+			if(GlobalData::Instance().level >= GlobalData::Instance().maxLevel)
+				get_tree()->change_scene("res://scenes/menu.tscn");
+			get_tree()->change_scene("res://scenes/level" + String::num(GlobalData::Instance().level) + ".tscn");
 			//Maybe another level
 		}
 	}
@@ -70,6 +74,7 @@ namespace godot
 		multiplier = 1;
 		if(lifes <= 0)
 		{
+			GlobalData::Instance().score = points;
 			Godot::print("Game Over");
 			get_tree()->change_scene("res://scenes/menu.tscn");
 		}

@@ -1,6 +1,7 @@
 #include "menu_paddle.h"
 #include <Input.hpp>
 #include <SceneTree.hpp>
+#include <game_manager.h>
 
 namespace godot
 {
@@ -26,6 +27,21 @@ namespace godot
 	void MenuPaddle::_ready()
 	{
 		set_position(start);
+
+		if(GlobalData::Instance().score > 0)
+		{
+			static_cast<Node2D*>(get_node("../Scores"))->set_visible(true);
+			Label* score = static_cast<Label*>(get_node("../Scores/Score"));
+			Label* highScore = static_cast<Label*>(get_node("../Scores/HighScore"));
+
+			if(GlobalData::Instance().score > GlobalData::Instance().highScore)
+			{
+				GlobalData::Instance().highScore = GlobalData::Instance().score;
+			}
+
+			score->set_text(String::num(GlobalData::Instance().score));
+			highScore->set_text(String::num(GlobalData::Instance().highScore));
+		}
 	}
 
 	void MenuPaddle::_process(float delta)
@@ -43,7 +59,7 @@ namespace godot
 		{
 			if(get_position() == start)
 			{
-				get_tree()->change_scene("res://scenes/level.tscn");
+				get_tree()->change_scene("res://scenes/level0.tscn");
 			}
 			else if(get_position() == quit)
 			{

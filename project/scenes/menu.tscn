@@ -123,7 +123,6 @@ anims/Blink = SubResource( 7 )
 anims/Intro = SubResource( 8 )
 
 [node name="Labels" type="Node2D" parent="."]
-visible = false
 
 [node name="Bloody" type="Label" parent="Labels"]
 margin_left = 336.825
@@ -145,7 +144,6 @@ custom_colors/font_color = Color( 0.376471, 0.4, 1, 1 )
 text = "Tears"
 
 [node name="Buttons" type="Node2D" parent="."]
-visible = false
 
 [node name="Start" type="Label" parent="Buttons"]
 margin_left = 608.289
@@ -163,3 +161,38 @@ margin_bottom = 1107.53
 custom_fonts/font = ExtResource( 4 )
 text = "QUIT
 "
+
+[node name="Scores" type="Node2D" parent="."]
+visible = false
+
+[node name="ScoreTitle" type="Label" parent="Scores"]
+margin_left = 807.959
+margin_top = 549.252
+margin_right = 1196.96
+margin_bottom = 705.252
+custom_fonts/font = ExtResource( 4 )
+text = "SCORE"
+
+[node name="HighScoreTitle" type="Label" parent="Scores"]
+margin_left = 637.369
+margin_top = 613.912
+margin_right = 1026.37
+margin_bottom = 769.912
+custom_fonts/font = ExtResource( 4 )
+text = "HIGH-SCORE"
+
+[node name="HighScore" type="Label" parent="Scores"]
+margin_left = 1057.31
+margin_top = 613.912
+margin_right = 1446.32
+margin_bottom = 769.912
+custom_fonts/font = ExtResource( 4 )
+text = "0"
+
+[node name="Score" type="Label" parent="Scores"]
+margin_left = 1055.04
+margin_top = 549.252
+margin_right = 1444.05
+margin_bottom = 705.252
+custom_fonts/font = ExtResource( 4 )
+text = "0"
