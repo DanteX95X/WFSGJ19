@@ -108,15 +108,22 @@ shape = SubResource( 3 )
 position = Vector2( 548.794, 1025.32 )
 
 [node name="Crier" parent="." instance=ExtResource( 8 )]
-position = Vector2( 120, 110 )
+position = Vector2( 120, 114.426 )
 Health = 1
+"Velocity Horizontal" = Vector2( 0, 0 )
+"Velocity Vertical" = Vector2( 0, 0 )
 
 [node name="Crier4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 420, 110 )
+position = Vector2( 420, 114.426 )
+Health = 2
+"Velocity Horizontal" = Vector2( 0, 0 )
+"Velocity Vertical" = Vector2( 0, 0 )
 
 [node name="Crier7" parent="." instance=ExtResource( 8 )]
-position = Vector2( 720, 110 )
+position = Vector2( 720, 114.426 )
 Health = 1
+"Velocity Horizontal" = Vector2( 0, 0 )
+"Velocity Vertical" = Vector2( 0, 0 )
 
 [node name="InvisiableWall" type="StaticBody2D" parent="."]
 position = Vector2( 1100.35, 985.986 )

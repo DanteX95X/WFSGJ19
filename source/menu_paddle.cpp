@@ -28,6 +28,8 @@ namespace godot
 	{
 		set_position(start);
 
+		GlobalData::Instance().level = 0;
+
 		if(GlobalData::Instance().score > 0)
 		{
 			static_cast<Node2D*>(get_node("../Scores"))->set_visible(true);
@@ -41,6 +43,8 @@ namespace godot
 
 			score->set_text(String::num(GlobalData::Instance().score));
 			highScore->set_text(String::num(GlobalData::Instance().highScore));
+
+			GlobalData::Instance().score = 0;
 		}
 	}
 

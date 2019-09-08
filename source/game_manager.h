@@ -49,6 +49,8 @@ namespace godot
 		void OnPointGained();
 
 	private:
+		void NextLevel();
+
 		int lifes;
 		int points;
 		int multiplier;

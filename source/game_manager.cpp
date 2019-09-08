@@ -1,5 +1,6 @@
 #include "game_manager.h"
 #include <SceneTree.hpp>
+#include <Input.hpp>
 
 namespace godot
 {
@@ -43,6 +44,11 @@ namespace godot
 
 	void GameManager::_process(float delta)
 	{
+		if(Input::get_singleton()->is_action_just_pressed("ui_cancel"))
+		{
+			NextLevel();
+		}
+
 		score->set_text(String::num(points));
 		bonus->set_text(String::num(multiplier));
 		lifesLeft->set_text(String::num(lifes - 1));
@@ -50,7 +56,7 @@ namespace godot
 		bool found = false;
 		for(int i = 0; i < get_child_count(); ++i)
 		{
-			if(get_child(i)->get_name() == "Crier")
+			if(get_child(i)->get_name().find("Crier") != -1)
 			{
 				found = true;
 				break;
@@ -58,12 +64,7 @@ namespace godot
 		}
 		if(!found)
 		{
-			GlobalData::Instance().score = points;
-			Godot::print("Level completed");
-			++GlobalData::Instance().level;
-			if(GlobalData::Instance().level >= GlobalData::Instance().maxLevel)
-				get_tree()->change_scene("res://scenes/menu.tscn");
-			get_tree()->change_scene("res://scenes/level" + String::num(GlobalData::Instance().level) + ".tscn");
+			NextLevel();
 			//Maybe another level
 		}
 	}
@@ -85,5 +86,15 @@ namespace godot
 		points += multiplier;
 		++multiplier;
 		Godot::print("points gained");
+	}
+
+	void GameManager::NextLevel()
+	{
+		GlobalData::Instance().score = points;
+		Godot::print("Level completed");
+		++GlobalData::Instance().level;
+		if(GlobalData::Instance().level >= GlobalData::Instance().maxLevel)
+			get_tree()->change_scene("res://scenes/menu.tscn");
+		get_tree()->change_scene("res://scenes/level" + String::num(GlobalData::Instance().level) + ".tscn");
 	}
 }
